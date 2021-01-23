@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>早鳥首映會</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="homework/images/PNG/favicon.ico">
+    <link href="homework/fontawesome-free-5.14.0-web/css/all.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            color: rgba(0, 2, 1, 0.63);
+
+        }
+
+        .nav1 {
+            background-color: #00c795;
+            color: #ffffff;
+            padding: 5px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .searchbar {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            border-top: none;
+            background-color: #ffffff;
+        }
+
+        @media screen and (max-width:1000px) {
+            .u-desktop-only {
+                display: none;
+                margin: 0 auto;
+            }
+        }
+
+        @media screen and (min-width:1100px) {
+            .u-mobile-only {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width:1000px) {
+            .input_group {
+                display: none;
+
+            }
+        }
+
+        @media screen and (min-width:1001px) {
+            .search_input_bar {
+                display: none;
+
+            }
+        }
+
+        .search_input_bar input {
+            width: 95%;
+            background: #ffffff;
+            padding: 0 10px 8px 10px;
+            border: 0px;
+            box-shadow: none;
+            background: #f3f3f3;
+            border-radius: 4px;
+            margin: 10px 0 10px 10px;
+        }
+
+
+        @media screen and (max-width:1000px) {
+            .searchbar .navbar-toggler {
+                position: absolute;
+            }
+        }
+
+        @media screen and (max-width:1000px) {
+            .nav-item {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width:1000px) {
+            .warp li i {
+                font-size: 25px;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            .usericon {
+                display: none;
+            }
+        }
+
+        .nav2 {
+            background-color: #ffffff;
+            z-index: 25;
+            color: #4a4a4a;
+            border: 1px solid #e6e6e6;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .nav2 {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            .input-group {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            .input-group-append {
+                display: none;
+            }
+        }
+
+        .nav2 ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            margin: 0;
+            width: 100%;
+        }
+
+        .nav2 ul li {
+            font-size: 11pt;
+            margin: 1rem;
+        }
+
+        .btnm {
+            background-color: rgb(0, 199, 149);
+            border: 0;
+            color: #fff;
+            font-weight: 200;
+        }
+
+        .nav-item {
+            margin-left: 1rem;
+        }
+
+        .warp {
+            display: flex;
+            justify-content: space-between;
+            flex-grow: 2;
+
+        }
+
+        .warp li {
+            margin-right: 3rem;
+
+        }
+
+        .banner {
+            height: 300px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+            display: table;
+            background-image: url(https://cdn.shopify.com/s/files/1/0254/0393/files/early-bg.jpg?229879);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        .bannersection {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .banner i {
+            color: #00c795;
+            padding-bottom: 1rem;
+        }
+
+        @media screen and (max-width: 500px) {
+            .banner h3 {
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 1.25;
+                letter-spacing: 0.96px;
+                text-align: center;
+                color: #ffffff;
+            }
+        }
+
+        @media screen and (min-width: 501px) {
+            .banner h3 {
+                font-size: 30px;
+                font-weight: 600;
+                line-height: 1.25;
+                letter-spacing: 0.96px;
+                text-align: center;
+                color: #ffffff;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+
+            .banner h4 {
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 1.56;
+                letter-spacing: 0.77px;
+                text-align: center;
+                color: #ffffff;
+                margin-top: 20px;
+                padding: 0 10px 0;
+            }
+        }
+
+
+        @media screen and (min-width: 501px) {
+            .banner h4 {
+                font-size: 24px;
+                line-height: 1.56;
+                letter-spacing: 0.77px;
+                text-align: center;
+                color: #ffffff;
+                margin-top: 20px;
+            }
+        }
+
+        .guarantees .title {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 1.56;
+            letter-spacing: 0.77px;
+            text-align: center;
+            color: #00c795;
+            margin-bottom: 28px;
+        }
+
+        .guarantees {
+            width: 100%;
+            padding: 36px 124px 36px 124px;
+            background-color: #f3f3f3;
+            display: block;
+        }
+
+ 
+
+        .row {
+            margin-right: -15px;
+            margin-left: -15px;
+            justify-content: center;
+        }
+
+        .col-xs-6 {
+            width: 50%;
+            /* float: left; */
+        }
+
+        .col-md-2 {
+            position: relative;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .number {
+            font-size: 33px;
+            font-weight: bold;
+            font-style: italic;
+            line-height: 1.5;
+            letter-spacing: 0.77px;
+            text-align: center;
+            color: #4a4a4a;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+            text-align: center;
+            color: #4a4a4a;
+        }
+
+
+        .box p {
+
+            font-size: 14px;
+            letter-spacing: 0.45px;
+            text-align: center;
+            color: #646464;
+            line-height: 2;
+        }
+
+        main {
+            margin: 0 auto;
+            padding-top: 50px;
+            line-height: 2;
+            max-width: 1200px;
+        }
+
+        .main-product-image {
+            padding: 0;
+            height: 408px;
+        }
+
+        .main-product-image img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            float: right;
+            cursor: pointer;
+        }
+
+        .main-product-text {
+            padding: 24px 36px;
+            background-color: #4a4a4a;
+            height: 408px;
+        }
+
+        .count-down {
+            font-size: 18px;
+            line-height: 1.11;
+            letter-spacing: 1.2px;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .status {
+            margin-top: 16px;
+            margin-bottom: 13px;
+        }
+
+        .status-label {
+            color: #f89c18;
+            border: 1px solid #f89c18;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 300;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+            padding: 2px 8px;
+
+        }
+
+        .status-info {
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            vertical-align: middle;
+            margin-left: 1px;
+            color: #f89c18;
+        }
+
+        .brand {
+            margin: 12px 0 4px 0;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 1.67;
+            letter-spacing: 0.8px;
+            color: #b3b3b3;
+            text-align: justify;
+        }
+
+        .info-title {
+            margin-bottom: 12px;
+            font-size: 25px;
+            font-weight: 500;
+            line-height: 1.26;
+            letter-spacing: 0.8px;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .summary {
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            border-bottom: solid 1px #e6e6e6;
+            text-align: left;
+        }
+
+        .info-order {
+            color: #b3b3b3;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: 0.8px;
+        }
+
+        .order-number {
+            color: #b3b3b3;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: 0.8px;
+        }
+
+        .order-number1 {
+            color: #b3b3b3;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 1.5;
+            letter-spacing: 0.8px;
+
+        }
+
+        .order-money {
+            color: #b3b3b3;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: 0.8px;
+
+        }
+
+        .main-product-text .btn {
+            border: none;
+            position: relative;
+            margin: 10px 1px 0 1px;
+
+        }
+
+        .main-product-text .btn-success {
+            box-shadow: none !important;
+            width: 100%;
+            padding: 8px 16px;
+            background: #00c795;
+            border-radius: 4px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .project {
+            margin-top: 2rem;
+        }
+
+        .project-row {
+            margin-bottom: 79px;
+        }
+
+        .project-first {
+            padding-left: 0;
+        }
+
+        .project-last {
+            padding-right: 0;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-countdown {
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            float: right;
+            color: #646464;
+            line-height: 2.3;
+        }
+
+        .project-title {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: 0.8px;
+            color: #4a4a4a;
+            text-align: left;
+            padding-bottom: 11px;
+            margin-bottom: 5px;
+            border-bottom: solid 1px #e6e6e6;
+            display: block;
+            height: 60px;
+        }
+
+        .info-ordered {
+            float: left;
+        }
+
+        .hot {
+            letter-spacing: 1px;
+            width: 47px;
+            height: 18px;
+            border-radius: 2px;
+            background-color: #fce6e6;
+            font-size: 12px;
+            color: #ee5b60;
+            margin-right: 4px;
+            padding: 2px 4px;
+            vertical-align: middle;
+
+        }
+
+        .override {
+            font-size: 14px;
+            color: #646464;
+        }
+
+        .coming-label {
+            margin-top: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: 0.8px;
+            color: #b3b3b3;
+            margin-bottom: 4px;
+        }
+
+        .coming-project-title {
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            letter-spacing: 0.8px;
+            color: #4a4a4a;
+        }
+
+        .coming {
+            position: relative;
+            text-align: center;
+        }
+
+        .project-img.coming {
+            filter: brightness(50%);
+        }
+
+        .coming-title {
+            font-size: 24px;
+            font-weight: bold;
+            line-height: 1;
+            letter-spacing: 1.2px;
+            color: #ffffff;
+            position: absolute;
+            cursor: pointer;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 190px;
+        }
+
+        .coming-sub {
+            margin-top: 8px;
+            margin-right: 4px;
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 1.5;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .newsletter {
+            width: 100%;
+            margin: 0 auto 3rem;
+            position: relative;
+            background: #f3f3f3;
+            padding: 36px 0 40px 0;
+            overflow: hidden;
+            clear: both;
+            text-align: center;
+        }
+
+        .cs-newsletterSection .cs-newsletterSection-wrapper {
+            margin: auto;
+            padding: 0;
+            background-color: transparent;
+            box-shadow: none;
+        }
+
+        .newsletter__form {
+            position: relative;
+            max-width: 460px;
+            margin: 0 auto;
+        }
+
+
+
+        .newsletter__email {
+            padding: 10px 225px 10px 20px;
+            border: none;
+            text-transform: uppercase;
+            background-color: #ffffff;
+            border: 1px solid #999999;
+            border-color: #4a4a4a;
+
+        }
+
+        .cs-newsletterSection .cs-newsletterSection-wrapper .newsletter__form .newsletter__submit {
+            background-color: #4a4a4a;
+            color: #ffffff;
+        }
+
+        .newsletter__submit {
+            position: absolute;
+            padding: 6px 30px 7px 30px;
+            margin-top: 3px;
+            line-height: normal;
+            border-radius: 2px;
+            border: none;
+            font-size: 14px;
+            top: 3px;
+            right: 3px;
+            color: #fff;
+            background: #4a4a4a;
+        }
+
+        .contract {
+            border-top: 1px solid #ccc;
+        }
+
+        .contract h6 {
+            font-size: 14px;
+            margin-top: 2rem;
+            font-weight: 600;
+        }
+
+        .contract ul {
+            list-style-type: none;
+            padding: 0;
+            line-height: 2rem;
+            font-weight: 400;
+            color: #707070;
+        }
+
+        .contract li {
+            transition: 0.5s;
+        }
+
+        .contract li:hover {
+            color: #00c795;
+        }
+
+        .copyright {
+            margin: 2rem 0 5rem;
+            padding-top: 4rem;
+            border-top: 1px solid rgba(204, 204, 204, 0.623);
+            text-align: center;
+        }
+
+        .copyright .creditcard {
+            margin-bottom: 2rem;
+            color: #b3b3b3b4;
+        }
+
+        .copyright .creditcard span {
+            padding-right: 15px;
+        }
+
+        .copyright p {
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 3px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="nav1">
+            購買國內外超夯【募資商品】，也可以享有完整售後服務
+        </nav>
+        <div class="searchbar">
+            <nav class="navbar navbar-expand-lg navbar-light .bg-white">
+
+                <img class="header__logo-image u-desktop-only"
+                    src="//cdn.shopify.com/s/files/1/0254/0393/files/desktop_300x.png?v=1550221223"
+                    srcset="//cdn.shopify.com/s/files/1/0254/0393/files/desktop_300x.png?v=1550221223 1x, //cdn.shopify.com/s/files/1/0254/0393/files/desktop_300x@2x.png?v=1550221223 2x"
+                    alt="citiesocial 找好東西" width="300">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <img class="header__logo-image u-mobile-only"
+                    src="//cdn.shopify.com/s/files/1/0254/0393/files/cs_logoedit_300x.png?v=1550221724"
+                    alt="citiesocial 找好東西" width="130" style="margin: 0 auto;">
+                <div class="input-group mb-3 col-6">
+                    <input type="search" class="form-control" placeholder="請輸入關鍵字" aria-label="Search"
+                        aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btnm btn btn-outline-secondary" type="button" id="button-addon2"><img
+                                src="homework/images/search.svg" alt="" width="15px"> 搜尋</button>
+                    </div>
+                </div>
+
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown col-6">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            台灣
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">台灣</a>
+                            <a class="dropdown-item" href="#">香港</a>
+                            <a class="dropdown-item" href="#">馬來西亞</a>
+                            <a class="dropdown-item" href="#">新加坡</a>
+                        </div>
+                    </li>
+                    <div class="warp">
+                        <li class="usericon">
+                            <i class="fas fa-user fa-2x"></i>
+                        </li>
+                        <li class="shopicon">
+                            <i class="fas fa-shopping-cart fa-2x"></i>
+                        </li>
+                    </div>
+                </ul>
+        </div>
+        <div class="search_input_bar">
+            <input type="search" name="q" class="search__input" autocomplete="off" autocorrect="off" aria-label="請輸入關鍵字"
+                placeholder="請輸入關鍵字" value="">
+        </div>
+        <nav class="nav2">
+            <ul>
+                <li>即時排行 TOP 100</li>
+                <li>早鳥首映會</li>
+                <li>焦點推薦</li>
+                <li>居家</li>
+                <li>家電</li>
+                <li>科技新創</li>
+                <li>鞋包配件</li>
+                <li>媽咪寶貝</li>
+                <li>運動戶外</li>
+                <li>購物優惠</li>
+                <li>VIEWS生活誌</li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <div class="bannersection">
+            <i class="fas fa-dove fa-3x"></i>
+            <h3>早鳥首映會</h3>
+            <h4>搶先擁有第一手最新奇獨特的商品，全台獨家，只在citiesocial上映</h4>
+        </div>
+
+    </div>
+    <div class="guarantees">
+        <div class="title">四大亮點</div>
+        <div class="row" style="text-align: center;">
+            <div class="box col-xs-6 col-md-2 col-md-offset-2">
+                <span class="number">1.</span>
+                <span class="subtitle">全台獨家</span>
+                <p>100%全新商品台灣首發，站內會員率先體驗</p>
+            </div>
+            <div class="box col-xs-6 col-md-2 col-md-offset-2">
+                <span class="number">2.</span>
+                <span class="subtitle">品質保證</span>
+                <p>達人真實評測，保證出貨，享有7天鑑賞期保障</p>
+            </div>
+            <div class="box col-xs-6 col-md-2 col-md-offset-2">
+                <span class="number">3.</span>
+                <span class="subtitle">絕對優惠</span>
+                <p>下單早鳥預購商品，90天內買貴退差價</p>
+            </div>
+            <div class="box col-xs-6 col-md-2 col-md-offset-2">
+                <span class="number">4.</span>
+                <span class="subtitle">最高回饋</span>
+                <p>專案成功解鎖後可獲得限量購物金，回饋高達20%，折抵無上限</p>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="main-product-image col-xs-12 col-md-8">
+                    <img src="https://cdn.shopify.com/s/files/1/0254/0393/products/a2110d67-7255-4866-9ce1-35f2ad1ad18d.jpg?v=1596960427"
+                        alt="">
+                </div>
+                <div class="main-product-text col-xs-12 col-md-4">
+                    <div class="count-down">倒數29天</div>
+                    <div class="status">
+                        <span class="status-label">超早鳥優惠</span>
+                        <span class="status-info">剩餘24組</span>
+                    </div>
+                    <div class="brand">品牌：lisscode®</div>
+                    <div class="info-title">GYMTUBE 敲敲小摩 震動按摩槍｜臺灣製造最小最輕量，專為都市女性打造</div>
+                    <div class="summary">Lisscode 敲敲小摩 震動按摩槍，臺灣製造最小最輕量，彩妝色系優..
+                    </div>
+                    <div class="info-order">
+                        <div style="float:left; display: inline-block;">
+                            <span class="order-number">1627</span>
+                            <span class="order-number1">人預購</span>
+                        </div>
+                        <div style="float: right; vertical-align: middle;;">
+                            <span class="order-money">NTD 4,345,247 </span>
+                            <span class="order-number1">累積金額</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-success btn-lg btn-block">看更多劇情介紹</button>
+                </div>
+            </div>
+
+            <div class="row project">
+                <div class="col-md-4 project-row project-first">
+                    <img class="project-img"
+                        src="https://cdn.shopify.com/s/files/1/0254/0393/products/311e69a0-b0fb-4ffc-8025-450b372fe8cc.jpg?v=1597106150"
+                        alt="">
+                    <div class="project-status">
+
+                        <span class="status-label" style="font-weight: 600;font-size: 10pt;">超早鳥優惠</span>
+                        <span class="status-info" style="font-weight: 500;font-size: 10pt;">剩餘1組</span>
+
+                        <span class="project-countdown">倒數19天</span>
+                    </div>
+                    <div class="brand">品牌：Beyond Nordic</div>
+                    <div class="project-title">BN002 2in1極限戶外登山褲｜長褲、短褲隨心變化</div>
+                    <div class="info-ordered project-ordered">
+                        <span class="hot"><i class="fas fa-fire-alt " style="padding-right: 4px;"></i>HOT</span>
+                        <span class="info-number override people">345</span>
+                        <span class="override" style="vertical-align: middle;">人預購</span>
+                    </div>
+                    <div class="override" style="float:right; vertical-align: middle;">
+                        <span class="info-number override amount">NTD 949,414</span> 累積金額
+                    </div>
+                </div>
+                <div class="col-md-4 project-row project-middle">
+                    <img class="project-img"
+                        src="https://cdn.shopify.com/s/files/1/0254/0393/products/309809f6-b999-4f95-9609-77a899498012.jpg?v=1597125550"
+                        alt="">
+                    <div class="project-status">
+
+                        <span class="status-label" style="font-weight: 600;font-size: 10pt;">超早鳥優惠</span>
+                        <span class="status-info" style="font-weight: 500;font-size: 10pt;">剩餘1組</span>
+
+                        <span class="project-countdown">倒數16天</span>
+                    </div>
+                    <div class="brand">品牌：Tropicfeel</div>
+                    <div class="project-title">Canyon 水陸兩棲快乾鞋｜正裝、休閒、玩樂，隨踩即換</div>
+                    <div class="info-ordered project-ordered">
+                        <span class="hot"><i class="fas fa-fire-alt" style="padding-right: 4px;"></i>HOT</span>
+                        <span class="info-number override people">286</span>
+                        <span class="override" style="vertical-align: middle;">人預購</span>
+                    </div>
+                    <div class="override" style="float:right; vertical-align: middle;">
+                        <span class="info-number override amount">NTD 836,901</span> 累積金額
+                    </div>
+                </div>
+                <div class="col-md-4 project-row project-last">
+                    <img class="project-img"
+                        src="https://cdn.shopify.com/s/files/1/0254/0393/products/ca6d94cc-e6ed-4c4b-95d4-2f683680dc3c.jpg?v=1596467491"
+                        alt="">
+                    <div class="project-status">
+
+                        <span class="status-label" style="font-weight: 600;font-size: 10pt;">超早鳥優惠</span>
+                        <span class="status-info" style="font-weight: 500;font-size: 10pt;">剩餘2組</span>
+
+                        <span class="project-countdown">倒數12天</span>
+                    </div>
+                    <div class="brand">品牌：Casamera</div>
+                    <div class="project-title">埃及棉透氣浴袍｜帶給你全年舒適的浴後體驗</div>
+                    <div class="info-ordered project-ordered">
+                        <span class="hot"><i class="fas fa-fire-alt" style="padding-right: 4px;"></i>HOT</span>
+                        <span class="info-number override people">150</span>
+                        <span class="override" style="vertical-align: middle;">人預購</span>
+                    </div>
+                    <div class="override" style="float:right; vertical-align: middle;">
+                        <span class="info-number override amount">NTD 388,636</span> 累積金額
+                    </div>
+                </div>
+                <div class="col-md-4 project-row project-first">
+                    <img class="project-img"
+                        src="https://cdn.shopify.com/s/files/1/0254/0393/products/da16f727-0578-4cc0-ab35-b41df2dea9bb.jpg?v=1597042429"
+                        alt="">
+                    <div class="project-status">
+
+                        <span class="status-label" style="font-weight: 600;font-size: 10pt;">超早鳥優惠</span>
+                        <span class="status-info" style="font-weight: 500;font-size: 10pt;">剩餘1組</span>
+
+                        <span class="project-countdown">倒數19天</span>
+                    </div>
+                    <div class="brand">品牌：Ccilu</div>
+                    <div class="project-title">Stepping Stones 三合一按摩忍者拖｜陪您走向健康的另ㄧ雙鞋</div>
+                    <div class="info-ordered project-ordered">
+                        <span class="hot"><i class="fas fa-fire-alt " style="padding-right: 4px;"></i>HOT</span>
+                        <span class="info-number override people">1,115</span>
+                        <span class="override" style="vertical-align: middle;">人預購</span>
+                    </div>
+                    <div class="override" style="float:right; vertical-align: middle;">
+                        <span class="info-number override amount">NTD 1,906,873</span> 累積金額
+                    </div>
+                </div>
+                <div class="col-md-4 project-row project-middle">
+                    <img class="project-img"
+                        src="https://cdn.shopify.com/s/files/1/0254/0393/products/f7d35c24-0948-44bd-8993-4b42fa7c6288.jpg?v=1596019093"
+                        alt="">
+                    <div class="project-status">
+                        <span class="status-label" style="font-weight: 600;font-size: 10pt;">超早鳥優惠</span>
+                        <span class="status-info" style="font-weight: 500;font-size: 10pt;">剩餘4組</span>
+
+                        <span class="project-countdown">倒數1天</span>
+                    </div>
+                    <div class="brand">品牌：OYO Fitness</div>
+                    <div class="project-title">攜帶式全能訓練健身器｜讓健身變成日常的一部分</div>
+                    <div class="info-ordered project-ordered">
+                        <span class="hot"><i class="fas fa-fire-alt" style="padding-right: 4px;"></i>HOT</span>
+                        <span class="info-number override people">157</span>
+                        <span class="override" style="vertical-align: middle;">人預購</span>
+                    </div>
+                    <div class="override" style="float:right; vertical-align: middle;">
+                        <span class="info-number override amount">NTD 579,116</span> 累積金額
+                    </div>
+                </div>
+                <div class="col-md-4 project-row project-last">
+                    <img class="project-img"
+                        src="https://cdn.shopify.com/s/files/1/0254/0393/products/f12856a3-5262-4deb-be11-8b70f2daab7e.jpg?v=1597221995"
+                        alt="">
+                    <div class="project-status">
+
+                        <span class="status-label" style="font-weight: 600;font-size: 10pt;">超早鳥優惠</span>
+                        <span class="status-info" style="font-weight: 500;font-size: 10pt;">剩餘3組</span>
+
+                        <span class="project-countdown">倒數4天</span>
+                    </div>
+                    <div class="brand">品牌：AIROgo</div>
+                    <div class="project-title">Flip Mask 安心罩｜衛生收納，摺出呼吸安全</div>
+                    <div class="info-ordered project-ordered">
+                        <span class="hot"><i class="fas fa-fire-alt" style="padding-right: 4px;"></i>HOT</span>
+                        <span class="info-number override people">41</span>
+                        <span class="override" style="vertical-align: middle;">人預購</span>
+                    </div>
+                    <div class="override" style="float:right; vertical-align: middle;">
+                        <span class="info-number override amount">NTD 72,205</span> 累積金額
+                    </div>
+                </div>
+                <div class="col-md-4 project-row project-first">
+                    <a href="" class="coming">
+                        <img class="project-img coming"
+                            src="https://cdn.shopify.com/s/files/1/0254/0393/products/f77a30e9-a728-4679-b2b2-fd9734b7d512.jpg?v=1597212108"
+                            alt="">
+                        <div class="coming-title">COMING SOON
+                            <div class="coming-sub">填問券搶先看</div>
+                        </div>
+                    </a>
+                    <div class="coming-label">即將上線</div>
+                    <span class="coming-project-title">直髮造型梳｜輕鬆化解毛躁自然捲</span>
+                </div>
+                <div class="col-md-4 project-row project-middle">
+                    <a href="" class="coming">
+                        <img class="project-img coming"
+                            src="https://cdn.shopify.com/s/files/1/0254/0393/products/c1635c53-3043-4c35-890e-6c9bed56556d.png?v=1596444865"
+                            alt="">
+                        <div class="coming-title">COMING SOON
+                            <div class="coming-sub">填問券搶先看</div>
+                        </div>
+                    </a>
+                    <div class="coming-label">即將上線</div>
+                    <span class="coming-project-title">SOUNDFORM™ ELITE 智慧音響｜完美聲響打造智慧家居</span>
+                </div>
+                <div class="col-md-4 project-row project-last">
+                    <a href="" class="coming">
+                        <img class="project-img coming"
+                            src="https://cdn.shopify.com/s/files/1/0254/0393/products/d73b4c8b-309f-457e-aad9-1137e503d728.jpg?v=1596793746"
+                            alt="">
+                        <div class="coming-title">COMING SOON
+                            <div class="coming-sub">填問券搶先看</div>
+                        </div>
+                    </a>
+                    <div class="coming-label">即將上線</div>
+                    <span class="coming-project-title">BIJOU 輕薄卡片型隨身投影機</span>
+                </div>
+                <div class="col-md-4 project-row project-first">
+                    <a href="" class="coming">
+                        <img class="project-img coming"
+                            src="https://cdn.shopify.com/s/files/1/0254/0393/products/1000x588.jpg?v=1590559910" alt="">
+                        <div class="coming-title">早鳥首映成功</div>
+                    </a>
+                    <div class="coming-label">專案已結束</div>
+                    <span class="coming-project-title">FlyNova 掌上飛行陀螺｜會自轉飛行的指尖陀螺</span>
+                </div>
+                <div class="col-md-4 project-row project-middle">
+                    <a href="" class="coming">
+                        <img class="project-img coming"
+                            src="https://cdn.shopify.com/s/files/1/0254/0393/products/0ea7d108-7663-4748-bd5c-bfa0ab64595a.jpg?v=1590565611"
+                            alt="">
+                        <div class="coming-title">早鳥首映成功</div>
+                    </a>
+                    <div class="coming-label">專案已結束</div>
+                    <span class="coming-project-title">FUGU Luggage Rollux 2 in 1 即刻擴展行李箱</span>
+                </div>
+                <div class="col-md-4 project-row project-last">
+                    <a href="" class="coming">
+                        <img class="project-img coming"
+                            src="https://cdn.shopify.com/s/files/1/0254/0393/products/e28df522-d4dd-4f79-b723-0b9737030ed1.jpg?v=1590565333"
+                            alt="">
+                        <div class="coming-title">早鳥首映成功</div>
+                    </a>
+                    <div class="coming-label">專案已結束</div>
+                    <span class="coming-project-title">10in1精悍快扣環｜口袋中的萬能神器</span>
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+    <footer>
+        <div class="newsletter cs-newsletterSection-wrapper">
+            <div class="newsletter__form">
+                <div class="wrap">
+                    <input class="email newsletter__email" name="EMAIL" placeholder="your@email.com">
+                    <input class="submit newsletter__submit button" name="subscribe" value="訂閱電子報" type="submit">
+                </div>
+            </div>
+        </div>
+        <div class="contract">
+            <div class="container">
+                <div class="row">
+                    <div class="box col-md-3 col-sm-6 col-xs-12">
+                        <h6>關於我們</h6>
+                        <ul>
+                            <li>關於 citiesocial</li>
+                            <li>隱私權保護政策</li>
+                            <li>服務條款</li>
+                            <li style="margin:10px 0 1rem;"><i class="fab fa-facebook-square  "
+                                    style="font-size: 25px; margin-right: 5px;"></i><i class="fab fa-instagram"
+                                    style="font-size: 25px;"></i></li>
+                            <li style="margin-bottom: 10px;"><img
+                                    src="https://cdn.shopify.com/s/files/1/0254/0393/files/app_store.png?15936755555544079266"
+                                    alt="Apple App Store"></li>
+                            <li><img src="https://cdn.shopify.com/s/files/1/0254/0393/files/google_play.png?15936755555544079266"
+                                    alt="Google Play"></li>
+                        </ul>
+                    </div>
+                    <div class="box col-md-3 col-sm-6 col-xs-12">
+                        <h6>聯絡我們</h6>
+                        <ul>
+                            <li>02.2393.2610</li>
+                            <li>service@citiesocial.com</li>
+                            <li>業務合作洽談</li>
+                            <li>Sell with citiesocial</li>
+                        </ul>
+                    </div>
+                    <div class="box col-md-3 col-sm-6 col-xs-12">
+                        <h6>自助查詢</h6>
+                        <ul>
+                            <li>銀行優惠說明</li>
+                            <li>LINE Points 回饋說明</li>
+                            <li>預購商品查詢</li>
+                            <li>訂單出貨查詢</li>
+                            <li>配送進度查詢</li>
+                        </ul>
+                    </div>
+                    <div class="box col-md-3 col-sm-6 col-xs-12">
+                        <h6>顧客服務</h6>
+                        <ul>
+                            <li>VIEWS生活誌</li>
+                            <li>早鳥首映會</li>
+                            <li>退換貨說明</li>
+                            <li>發票說明</li>
+                            <li>客服中心</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="creditcard">
+                <span><i class="fab fa-cc-visa fa-2x"></i></span>
+                <span><i class="fab fa-cc-mastercard fa-2x"></i></span>
+                <span><i class="fab fa-cc-amex fa-2x"></i></span>
+                <span><i class="fab fa-cc-jcb fa-2x"></i></span>
+            </div>
+            <p>重要公告：我們不會電話聯繫要求顧客傳真任何資料，請提高警覺勿依詐騙手法操作。</p>
+            <p>Copyright © 2011 - 2020, Citiesocial Co. Ltd., All Rights Reserved</p>
+        </div>
+    </footer>
+
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
