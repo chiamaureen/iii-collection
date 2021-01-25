@@ -1,0 +1,124 @@
+$colorOrange: #E55A54
+$colorBlue: #0C4475
+
+@mixin size($w,$h:$w)
+    width: $w
+    height: $h
+
+@mixin flexCenter
+    display: flex
+    justify-content: center
+    align-items: center
+
+html,body
+    font-family: "微軟正黑體"
+    margin: 0
+    padding: 0
+    +size(100%)
+    background-color: $colorOrange
+    +flexCenter
+
+// *
+//     border: 1px solid #000
+
+.monster
+    +size(110px)
+    background-color: $colorOrange
+    border-radius: 20px
+    flex-direction: column
+    cursor: pointer
+    margin: 10px
+    position: relative
+    box-shadow: 0px 10px 10px #1f1f1f88
+    transition: 0.5s
+    +flexCenter
+
+.monster::before
+    content: ""
+    display: block
+    +size(20%,10px)
+    background-color: #fff
+    border-radius: 30px
+    position: absolute
+    left: 36%
+    top: -10px
+    transform: translateX(-70%)
+    transform: rotate(45deg)
+.monster::after
+    content: ""
+    display: block
+    +size(20%,10px)
+    background-color: #fff
+    border-radius: 30px
+    position: absolute
+    left: 44%
+    top: -10px
+    transform: translateX(-30%)
+    transform: rotate(-45deg)
+
+.eye
+    +size(40px)
+    border-radius: 50%
+    background-color: #fff
+    +flexCenter
+.eyeball
+    +size(50%)
+    border-radius: 50%
+    background-color: $colorBlue
+.mouth
+    +size(32%,12px)
+    background-color: #fff
+    border-radius: 12px
+    margin-top: 15px
+.monster.blue
+    background-color: $colorBlue
+    .mouth,.eyeball
+        background-color: $colorOrange
+
+@keyframes jumping
+    50%
+        top: 0
+        box-shadow: 0px 10px 10px #1f1f1f88
+    100%
+        top: -50px
+        box-shadow: 0px 120px 50px #1f1f1f65
+.monster
+    animation: jumping 0.8s infinite alternate
+@keyframes eyemoving
+    0%,10%
+        transform: translateX(50%)
+    90%,100%
+        transform: translateX(-50%)
+.eyeball
+    animation: eyemoving 1.5s infinite alternate
+h2
+    color: white
+    font-size: 40px
+    margin-right: 50px
+h3
+    margin-top: 0
+    opacity: 0.5
+    color: white
+.pageLoading
+    +size(100%)
+    position: fixed
+    background-color: $colorBlue
+    flex-direction: column
+    +flexCenter
+
+.loading
+    +size(200px,8px)
+    background-color: #fff
+    margin-top: 50px
+    border-radius: 4px
+    overflow: hidden
+    .bar
+        background-color: $colorOrange
+        +size(0%,100%)
+        border-radius: 4px
+.pageLoading.complete
+    opacity: 0
+    transition: 0.5s
+    transition-delay: 0.5s
+    .monster
+        transform: scale(0.01)rotate(360deg)
