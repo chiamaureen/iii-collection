@@ -3,8 +3,8 @@
 
 ## 作品連結
 ### bootstrap 練習
-  * 用bootstrap 刻出目前線上使用該技術的網頁（參考網頁：https://www.citiesocial.com/collections/early-bird ）
-   ** 作品連結:https://chiamaureen.github.io/iii-collection/bshomework.html
+  用bootstrap 刻出目前線上使用該技術的網頁（參考網頁：https://www.citiesocial.com/collections/early-bird ）
+  * 作品連結:https://chiamaureen.github.io/iii-collection/bshomework.html
   
   
 ### CSS 練習
