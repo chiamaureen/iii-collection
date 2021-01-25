@@ -5,7 +5,8 @@
 ### bootstrap 練習
   用bootstrap 刻出目前線上使用該技術的網頁
   <br/>
-  （參考網頁：https://www.citiesocial.com/collections/early-bird ）
+  （參考網頁：[早鳥首映會| citiesocial | 找好東西](https://www.citiesocial.com/collections/early-bird) ）
+  <br/>
   [作品連結](https://chiamaureen.github.io/iii-collection/bshomework.html)
   
   
