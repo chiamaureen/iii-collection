@@ -1,0 +1,103 @@
+@mixin size($w,$h:$w)
+    width: $w
+    height: $h
+
+html,body
+    background-color: #282f38
+    color: white
+    display: flex
+    justify-content: center
+
+.coffeeType
+    display: flex
+    align-items: center
+    // border: 1px solid white
+    max-width: 400px
+    padding: 10px 20px
+    border-radius: 5px
+    cursor: pointer
+    border-bottom: 1px solid rgba(white,0.1)
+    transition: .5s
+    &:hover
+        background-color: #ffffff21
+    &.showMode
+        label,input,select
+            display: none
+    //
+    .num
+        font-size: 60px
+        flex: 1
+        font-weight: bold
+        margin-right: 30px
+    .cupContainer
+        flex: 1
+    .control
+        flex: 2
+        margin-left: 30px
+    .cup
+        border: 4px solid white
+        +size(70px, 50px)
+        border-top: none
+        border-radius: 0 0 50px 50px
+        margin: 10px
+        padding-top: 5px
+        position: relative
+        //咖啡杯大小
+        &.small
+            +size(60px,40px)
+        &.big
+            +size(70px,50px)
+        &.mock
+            +size(60px,70px)
+            border-radius: 0
+            .ingradients
+                border-radius: 0
+        //  把手
+        &:before
+            content: ''
+            display: block
+            border: 4px solid white
+            border-left: none
+            border-radius: 0 50px 50px 0
+            +size(15px,20px)
+            position: absolute
+            left: 100%
+            top: 18%
+      
+    
+        .ingradients
+            +size(100%)
+            border-radius: 0 0 50px 50px
+            overflow: hidden
+            display: flex
+            flex-direction: column-reverse
+           
+       
+
+
+            .coffee, .milk, .water, .bubble
+                background-color: #fff
+                height: 10px
+            .coffee
+                background-color: #66491a
+            .milk
+                background-color: #f7d8bb
+            .water
+                background-color: #598bce
+            .bubble
+                background-color: #eee
+
+    &.favorite
+        &::before
+            content: 'BEST'
+            color: #ff5e5e
+            line-height: 0.9
+            border: 5px solid #ff5e5e
+            padding: 5px 3px
+            font-size: 30px
+            position: absolute
+            transform: translateX(-70px)rotate(-20deg)
+
+    // .inputArea
+    //     height: 40px
+    //     width: 200px

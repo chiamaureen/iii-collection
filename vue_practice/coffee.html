@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Coffee</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="images/favicon.ico" rel="shortcut icon">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/all.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js"
+        integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/regular.js"
+        integrity="sha384-t7yHmUlwFrLxHXNLstawVRBMeSLcXTbQ5hsd0ifzwGtN7ZF7RZ8ppM7Ldinuoiif"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js"
+        integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+        crossorigin="anonymous"></script>
+    <script src="/javascripts/vendor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link href="../css/coffee.css" rel="stylesheet">
+</head>
+
+<body class="bg-lighter">
+
+    <div id="app">
+        <label class="hiddenControl">Editing:<input v-model="editing" type="checkbox" />
+            <select v-model="favoriteType">
+                <option v-for="coffee in coffees" :value="coffee.name">{{coffee.name}}</option>
+            </select>
+        </label>
+        <h3>Coffee Editor</h3>
+        <div class="coffeeType" :class="{favorite: coffee.name==favoriteType,showMode:!editing}"
+            v-for="(coffee,index) in coffees">
+            <div class="num">0{{index+1}}</div>
+            <div class="cupContainer">
+                <div class="cup" :class="[coffee.type]">
+
+                    <div class="ingradients">
+                        <div class="coffee" :style="{height:coffee.coffee+'px'}"></div>
+                        <div class="milk" :style="{height:coffee.milk+'px'}"></div>
+                        <div class="water" :style="{height:coffee.water+'px'}"></div>
+                        <div class="bubble" :style="{height:coffee.bubble+'px'}"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="control">
+                <h2>{{ coffee.name }}</h2>
+                <select v-model="coffee.type" style="margin-bottom: 20px;">
+                    <option v-for="cupType in cupTypes" :value="cupType">{{ cupType }}</option>
+                </select>
+                <div v-for="type in ['coffee','water','milk','bubble']" class="inputArea">
+                    <label>{{type}}</label>
+                    <input type="range" v-model="coffee[type]" min="0" max="80">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                editing: false,
+                cupTypes: [
+                    'small', 'medium', 'big', 'mock'
+                ],
+                coffees: [
+                    {
+                        name: 'ESPRESSO',
+                        coffee: 80, water: 0, milk: 0, bubble: 0, type: 'small'
+                    },
+                    {
+                        name: 'AMERICANO',
+                        coffee: 50, water: 40, milk: 0, bubble: 0, type: 'big'
+                    },
+                    {
+                        name: 'CAPPUCCINO',
+                        coffee: 25, water: 0, milk: 30, bubble: 30, type: 'medium'
+                    },
+                    {
+                        name: 'LATTE',
+                        coffee: 25, water: 0, milk: 40, bubble: 20, type: 'mock'
+                    },
+                ],
+                favoriteType: 'LATTE'
+            },
+            // 請在此撰寫 JavaScript
+            computed: {
+                reverseText: function () {
+                    return this.text.split('').reverse().join('');
+                }
+            }
+
+        });
+    </script>
+
+
+</body>
+
+</html>
