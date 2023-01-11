@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: black; */
+        }
+
+        canvas {
+        /* border: 3px solid #000; */
+        background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="mycanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById("mycanvas")
+        const ctx = canvas.getContext("2d")
+
+        canvas.width = 400
+        canvas.height = 400
+
+        let time = 0
+        function draw () {
+            time++
+            ctx.clearRect(0,0,400,400)
+            ctx.beginPath()
+            for (let i = 0; i < 10; i++) {
+                let position = i*50
+                ctx.moveTo(position,0)
+                ctx.lineTo(position,400)
+                ctx.fillText(position,position,10)
+                ctx.moveTo(0,position)
+                ctx.lineTo(400,position)
+                ctx.fillText(position,3,position)
+            }
+            ctx.strokeStyle="rgba(0,0,0,0.1)"
+            ctx.stroke()
+            
+            //baseLine
+            ctx.beginPath()
+            ctx.moveTo(25,350)
+            ctx.lineTo(375,350)
+            ctx.lineWidth = 2
+            ctx.strokeStyle="rgb(0,0,0)"
+            ctx.stroke()
+            
+            ctx.fillStyle="#f7797d"
+            ctx.fillRect(300,300,50,50)
+            ctx.strokeRect(300,300,50,50)
+            
+            ctx.beginPath()
+            ctx.rect(250,250,50,100)
+            ctx.rect(50,300,50,50)
+            ctx.fillStyle = "#FBD786"
+            ctx.fill()
+            ctx.stroke()
+            
+            
+            ctx.beginPath()
+            ctx.rect(100,250,50,100)
+            ctx.rect(200,250,50,100)
+            ctx.fillStyle = "#C6FFDD"
+            ctx.fill()
+            ctx.stroke()
+            //door
+            ctx.beginPath()
+            ctx.moveTo(100,200)
+            ctx.lineTo(250,200)
+            ctx.lineTo(250,250)
+            ctx.lineTo(200,250)
+            ctx.arc(175,250,25,Math.PI*2,Math.PI,true)
+            ctx.lineTo(100,250)
+            ctx.lineTo(100,200)
+            ctx.fillStyle = "white"
+            ctx.fill()
+            ctx.stroke()
+            //roof
+            ctx.beginPath()
+            ctx.moveTo(100,200)
+            ctx.lineTo(175,150)
+            ctx.lineTo(250,200)
+            ctx.closePath()
+            ctx.fillStyle = "#f7797d"
+            ctx.fill()
+            ctx.stroke()
+            
+            
+            //flag
+            ctx.beginPath()
+            ctx.moveTo(175,150)
+            ctx.lineTo(175,100-(mouse.y/5))
+            ctx.lineTo(200,110-(time%5)-(mouse.y/5))
+            ctx.lineTo(175,120-(mouse.y/5))
+            ctx.closePath()
+            ctx.fillStyle = "hsl("+(mouse.x%300)+",50%,50%)"
+            ctx.fill()
+            ctx.stroke()
+            
+            
+            //car
+            ctx.fillStyle = "white"
+            let carX = time%440-40
+            ctx.fillRect(carX,325,40,25)
+            ctx.strokeRect(carX,325,40,25)
+            ctx.beginPath()
+            ctx.arc(carX+10,350,5,0,Math.PI*2)
+            ctx.arc(carX+30,350,5,0,Math.PI*2)
+            ctx.fillStyle = "black"
+            ctx.fill()
+            ctx.closePath()
+            ctx.stroke()
+        }
+        setInterval(draw,30)
+        const mouse = {x:0, y:0}
+        canvas.addEventListener("mousemove",function(e) {
+            mouse.x = e.offsetX
+            mouse.y = e.offsetY
+        })
+        // draw()
+    </script>
+</body>
+</html>
