@@ -1,0 +1,143 @@
+$colorBlue: #307BE1
+$colorDeepBlue: #2F4A6E
+$colorYellow: #FFC12C
+$colorOrange: #F38A0C
+$colorShadow: rgba(black,0.1)
+
+$shadowInset: inset -10px -10px 0px $colorShadow
+    
+@mixin size($w, $h:$w)
+    width: $w
+    height: $h
+
+@mixin flexCenter
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin bdrsRect($w,$h, $bdrs:$h/2)
+    width: $w
+    height: $h
+    border-radius: $bdrs
+
+@mixin hair($w,$h)
+    +bdrsRect($w,$h)
+    box-shadow: $shadowInset
+*
+    // border: 1px solid black
+
+html, body
+    +size(100%)
+    margin: 0
+    +flexCenter
+
+.scene
+    +size(600px,500px)
+    +flexCenter
+    background-color: $colorBlue
+    position: relative
+    .title
+        position: absolute
+        left: 20px
+        top: 20px
+        margin: 0
+        font-size: 50px
+        color: white
+        opacity: 0
+    .question
+        font-size: 20px
+        margin: 0
+        display: none
+
+.person
+    .hairs
+        position: relative
+        .hair1
+            +hair(150px, 80px)
+            margin-left: 10px
+            background-color: #fff
+        .hair2
+            +hair(150px, 60px)
+            background-color: #fff
+            margin: 
+                left: 50px
+                top: -40px
+        .hair3
+            +hair(150px, 70px)
+            background-color: #fff
+            margin: 
+                left: 5px
+                top: -45px
+    .body
+        +bdrsRect(210px, 120px, 40px)
+        padding-top: 50px
+        margin-top: -40px
+        background-color: $colorYellow
+        box-shadow: $shadowInset
+
+        .eyes
+            .eye
+                +bdrsRect(50px, 25px)
+                display: inline-block
+                margin-right: 5px
+                margin-left: 15px
+                background-color: #fff
+            .eyeball
+                +bdrsRect(20px, 25px)
+                background-color: $colorDeepBlue
+        
+        .mouth
+            +bdrsRect(70px, 25px)
+            margin: 
+                top: 15px
+                left: 70px
+            background-color: $colorOrange
+            
+            .food
+                +bdrsRect(12px, 12px)
+                margin-left: -40px
+                background-color: $colorOrange
+
+.scene
+    .title
+        transition: 0.5s
+.person
+    transition: 0.5s
+    .body
+        transition: 0.5s, background-color 4s 1s // 背景色四秒後會變化 離開滑鼠事件後一秒會回來
+*
+    transition: 0.5s
+
+.scene:hover
+    transition: 0.5s
+    .person
+        margin-top: 50px
+    .body
+        box-shadow: $shadowInset, 30px 10px $colorShadow
+
+    .person:hover
+        transform: translateX(40px)
+        .body
+            box-shadow: $shadowInset, -30px 10px $colorShadow
+            background-color: $colorOrange
+        .eyes
+            transform: translateX(30px)
+        .eyeball
+            transform: translateX(25px)
+        .hairs
+            .hair3
+                margin-left: 0
+
+
+
+    .title
+        opacity: 1
+
+.scene:active
+    .person
+        position: relative
+    .question
+        display: block
+        position: absolute
+        left: 60px
+
