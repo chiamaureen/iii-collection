@@ -1,0 +1,77 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #222;
+}
+
+.rect {
+  width: 30%;
+  height: 300px;
+  position: relative;
+  background-color: #fff;
+}
+
+.ball {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@-webkit-keyframes ani {
+  0% {
+    left: 0;
+  }
+  50% {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 50%;
+  }
+  100% {
+    left: calc(100% - 50px);
+  }
+}
+
+@keyframes ani {
+  0% {
+    left: 0;
+  }
+  50% {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    border-radius: 50%;
+  }
+  100% {
+    left: calc(100% - 50px);
+  }
+}
+
+.ball {
+  -webkit-animation-name: ani;
+          animation-name: ani;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+/*# sourceMappingURL=anime.css.map */

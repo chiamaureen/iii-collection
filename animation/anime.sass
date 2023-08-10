@@ -1,0 +1,43 @@
+html,body
+    width: 100%
+    height: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    background-color: #222
+
+.rect
+    width: 30%
+    height: 300px
+    position: relative
+    background-color: #fff
+
+.ball
+    width: 50px
+    height: 50px
+    background-color: red
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+
+
+@keyframes ani
+    0% 
+        left: 0    
+
+    50%
+        width: 100px
+        height: 100px
+        background-color: blue
+        border-radius: 50%
+    100% 
+        left: calc(100% - 50px)
+
+.ball
+    animation-name: ani
+    animation-duration: 2s
+    animation-delay: 2s
+    animation-iteration-count: infinite
+    animation-direction: alternate
+    animation-fill-mode: both // 動畫開始是抓網格第一格的畫面
+            
